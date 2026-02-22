@@ -1,9 +1,7 @@
 ﻿
 # Plex Portal
 
-**Version:** Check [package.json](./package.json) for current version (auto-updated via semantic-release)
-
-The latest version is always displayed dynamically in the website footer.
+**Latest Version:** Check [package.json](./package.json) for current version (auto-updated via semantic-release)
 
 Application web pour gérer votre accès Plex, afficher abonnements, statistiques de visionnage, et accéder à Seerr via SSO intégré.
 
