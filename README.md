@@ -5,13 +5,21 @@ Application web pour gérer votre accès Plex, afficher abonnements, statistique
 ##  Fonctionnalités
 
 🔐 **Authentification Plex** : Connexion via compte Plex (OAuth)
+
 📊 **Dashboard** : Vue d'ensemble (abonnement, statistiques, demandes Seerr)
+
 🎫 **Abonnements Wizarr** : Date d'expiration et groupe (requis pour toutes les fonctionnalités)
+
 📈 **Statistiques Tautulli** : Historique de visionnage, temps total, collections (requis pour toutes les fonctionnalités)
+
 🛡️ **Intégration Seerr (SSO)** : Accès à Seerr dans une iframe full-page sans re-connexion
+
 🏆 **Système XP & Succès** : Points d'expérience et badges selon l'activité de visionnage
+
 👤 **Page Profil** : Stats personnelles, demandes Seerr, succès débloqués
+
 🔄 **Reverse Proxy Automatique** : Détection auto via headers `X-Forwarded-*`
+
 ⚡ **Configuration Minimale** : Juste `SESSION_SECRET` en obligatoire
 
 ---
