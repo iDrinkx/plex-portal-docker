@@ -1,4 +1,4 @@
-#  Plex Portal
+﻿#  Plex Portal
 
 Application web pour gérer votre accès Plex, afficher abonnements, statistiques de visionnage, et accéder à Seerr via SSO intégré.
 
@@ -306,21 +306,15 @@ Aucune configuration manuelle requise.
 - **Base de données** : SQLite (sessions, XP, cache stats)
 - **Container** : Docker
 
-### Installation locale sans Docker
 
-```bash
-npm install
-# Configurer les variables d'env (voir docker-compose.yml)
-npm start
-# http://localhost:3000
-```
+---
 
-### Build et push image Docker
+## Code source et contributions
 
-```bash
-docker build -t ghcr.io/idrinkx/plex-portal:latest .
-docker push ghcr.io/idrinkx/plex-portal:latest
-```
+Le code source de Plex Portal n'est pas public. Seule l'image Docker officielle et la documentation sont disponibles.
+
+Pour toute suggestion ou bug, ouvrez une issue ou contactez l'auteur.
+
 
 ---
 
