@@ -1,3 +1,5 @@
+**Version: v1.17.2**
+
 ﻿
 # Plex Portal
 
