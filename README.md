@@ -1,5 +1,3 @@
-**Version: v1.18.0**
-
 ﻿
 # Plex Portal
 
@@ -30,6 +28,8 @@ Les changements sont **automatiquement synchronisés** vers le repo public aprè
 🏆 **Système XP & Succès** : Points d'expérience et badges selon l'activité de visionnage
 
 👤 **Page Profil** : Stats personnelles, demandes Seerr, succès débloqués
+
+📅 **Calendrier des sorties** : Sorties films/séries à venir depuis Radarr et Sonarr (4 vues : semaine, mois, jour, liste)
 
 🔄 **Reverse Proxy Automatique** : Détection auto via headers `X-Forwarded-*`
 
@@ -124,6 +124,7 @@ plex-portal/
      tautulli-events.js
      logger.js                       # Logger unifié (timestamp + couleurs)
      wizarr.js                       # API Wizarr
+     radarr-sonarr.js                # APIs calendrier Radarr + Sonarr
      xp-system.js                    # Calcul XP et niveaux
 
    config/
@@ -185,6 +186,12 @@ SEERR_URL: "http://Seerr:5055"                   # URL interne (API auth au logi
 SEERR_PUBLIC_URL: "https://seerr.votredomaine.com" # URL publique (src iframe)
 SEERR_API_KEY: "votre-cle"                        # Clé API (stats profil)
 
+# Radarr & Sonarr  calendrier des sorties
+RADARR_URL: "http://radarr:7878"
+RADARR_API_KEY: "votre-cle"
+SONARR_URL: "http://sonarr:8989"
+SONARR_API_KEY: "votre-cle"
+
 # Sécurité  restriction aux utilisateurs du serveur Plex
 PLEX_URL: "http://plex:32400"
 PLEX_TOKEN: "votre-token"
@@ -222,6 +229,10 @@ services:
       - SEERR_URL=http://Seerr:5055
       - SEERR_PUBLIC_URL=https://seerr.votredomaine.com
       - SEERR_API_KEY=votre-cle
+      - RADARR_URL=http://radarr:7878
+      - RADARR_API_KEY=votre-cle
+      - SONARR_URL=http://sonarr:8989
+      - SONARR_API_KEY=votre-cle
       - PLEX_URL=http://plex:32400
       - PLEX_TOKEN=votre-token
     volumes:
@@ -262,6 +273,7 @@ GET  /statistiques              Statistiques de visionnage (auth requis)
 GET  /statistiques/activite     Activité détaillée (auth requis)
 GET  /seerr                     Seerr en iframe full-page (auth requis)
 GET  /succes                    Liste des succès disponibles
+GET  /calendrier                Calendrier des sorties Radarr + Sonarr (auth requis)
 
 # Auth
 GET  /login                     Initie l'auth Plex OAuth
@@ -273,6 +285,7 @@ GET  /api/subscription          Infos abonnement Wizarr
 GET  /api/stats                 Statistiques Tautulli
 GET  /api/seerr                 Stats demandes Seerr
 GET  /api/server-stats          Stats librairies serveur (films, séries, musiques)
+GET  /api/calendar              Calendrier events Radarr + Sonarr (auth requis)
 POST /api/cache/invalidate      Invalide le cache utilisateur
 ```
 
